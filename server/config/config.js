@@ -7,6 +7,18 @@ process.env.PORT = process.env.PORT || 3000;
 //localhost:27017/cafe
 
 
+//====================
+//Vencimiento del Token
+//====================
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+
+//====================
+//Seed o semilla
+//====================
+process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
+
+
 //conexion remota
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev'
 

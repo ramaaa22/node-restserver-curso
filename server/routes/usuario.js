@@ -6,7 +6,7 @@ const { verificaToken, verificaRol } = require('../middlewares/autenticacion');
 const app = express();
 
 
-app.get('/usuario', verificaToken, (req, res) => {
+app.get('/usuario', [verificaToken, verificaRol], (req, res) => {
     let desde = req.query.desde || 0;
     let limite = req.query.limite || 10;
     desde = Number(desde);
@@ -59,7 +59,7 @@ app.post('/usuario', [verificaToken, verificaRol], (req, res) => {
 
 })
 
-app.put('/usuario/:id', verificaToken, (req, res) => {
+app.put('/usuario/:id', [verificaToken, verificaRol], (req, res) => {
     let id = req.params.id;
     //let body = req.body;
     let body = underscore.pick(req.body, ['nombre', 'email', 'img', 'role', 'estado']);
@@ -104,7 +104,7 @@ app.put('/usuario/:id', verificaToken, (req, res) => {
     });
 });*/
 
-app.delete('/usuario/:id', verificaToken, (req, res) => {
+app.delete('/usuario/:id', [verificaToken, verificaRol], (req, res) => {
     let id = req.params.id;
     console.log(`El usuario es ${id}`);
     let body = req.body;

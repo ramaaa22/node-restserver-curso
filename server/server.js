@@ -4,6 +4,7 @@ const app = express();
 
 const mongoose = require('mongoose');
 //mongoose.set('useCreateIndex', true);
+const path = require('path');
 
 
 const bodyParser = require('body-parser');
@@ -12,6 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json());
+
+//habilitar la carpeta public
+app.use(express.static(path.resolve(__dirname, '../public')));
+
 
 //configuracion global de rutas
 app.use(require('./routes/index'));

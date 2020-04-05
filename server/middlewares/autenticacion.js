@@ -31,7 +31,7 @@ let verificaRol = (req, res, next) => {
         return res.status(400).json({
             ok: false,
             err: {
-                message: 'el usuario no es administrador'
+                message: 'El usuario no es administrador'
             }
         })
     }

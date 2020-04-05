@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 
 const mongoose = require('mongoose');
-//mongoose.set('useCreateIndex', true);
 const path = require('path');
 
 

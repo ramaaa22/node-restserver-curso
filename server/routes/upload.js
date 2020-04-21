@@ -1,5 +1,5 @@
 const express = require('express');
-const fileUpload = require('express-fileUpload');
+const fileUpload = require('express-fileupload');
 const app = express();
 const Usuario = require('../models/usuario');
 const Producto = require('../models/producto');
